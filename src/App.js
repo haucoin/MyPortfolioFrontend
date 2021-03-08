@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage.js';
 import ProjectsPage from './pages/ProjectsPage.js';
+import ViewProjectPage from './pages/ViewProjectPage.js';
 import ExperiencesPage from './pages/ExperiencesPage.js';
 import EducationPage from './pages/EducationPage.js';
 import AboutPage from './pages/AboutPage.js';
@@ -26,6 +27,9 @@ export default function App() {
             </Route>
             <Route exact path="/projects">
               <ProjectsPage />
+            </Route>
+            <Route exact path="/project">
+              <ViewProjectPage />
             </Route>
             <Route exact path="/experience">
               <ExperiencesPage />

@@ -67,65 +67,28 @@ export default function App() {
     })
   }, []);
 
-  // Iterate through the array of language technologies and turn it into string
-  let languages = "";
-  languageSkills.map((language, index) => (
-    languages += language.name + (index < languageSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
+  // Iterate through an array of technologies and turn it into string
+  function arrayToString(skillsArray) {
+    let string = "";
 
-  // Iterate through the array of IDE technologies and turn it into string
-  let IDEs = "";
-  IDESkills.map((IDE, index) => (
-    IDEs += IDE.name + (index < IDESkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
+    skillsArray.map((skill, index) => (
+      string += skill.name + (index < skillsArray.length - 1 ? ' •\u00A0' : ' ')
+    ))
 
-  // Iterate through the array of tool technologies and turn it into string
-  let tools = "";
-  toolSkills.map((tool, index) => (
-    tools += tool.name + (index < toolSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
+    return string;
+  }
 
-  // Iterate through the array of software design technologies and turn it into string
-  let SDs = "";
-  SDSkills.map((SD, index) => (
-    SDs += SD.name + (index < SDSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of frameworks technologies and turn it into string
-  let frameworks = "";
-  frameworkSkills.map((framework, index) => (
-    frameworks += framework.name + (index < frameworkSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of design pattern technologies and turn it into string
-  let DPs = "";
-  DPSkills.map((DP, index) => (
-    DPs += DP.name + (index < DPSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of agile scrum technologies and turn it into string
-  let agiles = "";
-  agileSkills.map((agile, index) => (
-    agiles += agile.name + (index < agileSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of application server technologies and turn it into string
-  let servers = "";
-  serverSkills.map((server, index) => (
-    servers += server.name + (index < serverSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of cloud service technologies and turn it into string
-  let clouds = "";
-  cloudSkills.map((cloud, index) => (
-    clouds += cloud.name + (index < cloudSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
-
-  // Iterate through the array of database technologies and turn it into string
-  let databases = "";
-  databaseSkills.map((database, index) => (
-    databases += database.name + (index < databaseSkills.length - 1 ? ' •\u00A0' : ' ')
-  ))
+  // Set strings for each type of skill by calling method
+  let languages = arrayToString(languageSkills);
+  let IDEs = arrayToString(IDESkills);
+  let tools = arrayToString(toolSkills);
+  let SDs = arrayToString(SDSkills);
+  let frameworks = arrayToString(frameworkSkills);
+  let DPs = arrayToString(DPSkills);
+  let agiles = arrayToString(agileSkills);
+  let servers = arrayToString(serverSkills);
+  let clouds = arrayToString(cloudSkills);
+  let databases = arrayToString(databaseSkills);
 
   const classes = useStyles();
 
@@ -147,28 +110,28 @@ export default function App() {
 
   return (
 
-    <Paper>
       <section>
-        <Container maxWidth="md" >
-          <Box py={6}>
-            <div align="center" style={{paddingBottom: "25px"}}>
-              <Typography variant="h5" gutterBottom={true}>Skills & Expertise</Typography>
-              <hr width="100px" align="center"/>
-            </div>
-            <Grid container spacing={4}>
-              {/* Iterate through the skills using map, and use index variable to display each icon and title */}
-              {skills.map((skill, id) => (
-                  <Grid item xs={12} sm={6} md={4} style={{textAlign: "center"}}>
-                    {icons[id]}
-                    <Typography variant="h6" component="h3" gutterBottom={true}>{titles[id]}</Typography>
-                    <Typography variant="body1" component="p">{skill}</Typography>
-                  </Grid>
-                ))
-              }
-            </Grid>
-          </Box>
-        </Container>
+        <Paper>
+          <Container maxWidth="md" >
+            <Box py={6}>
+              <div align="center" style={{paddingBottom: "25px"}}>
+                <Typography variant="h5" gutterBottom={true}>Skills & Expertise</Typography>
+                <hr width="100px" align="center"/>
+              </div>
+              <Grid container spacing={4} style={{ justifyContent: "center" }}>
+                {/* Iterate through the skills using map, and use index variable to display each icon and title */}
+                {skills.map((skill, id) => (
+                    <Grid key={id} item xs={12} sm={6} md={4} style={{textAlign: "center"}}>
+                      {icons[id]}
+                      <Typography variant="h6" component="h3" gutterBottom={true}>{titles[id]}</Typography>
+                      <Typography variant="body1" component="p">{skill}</Typography>
+                    </Grid>
+                  ))
+                }
+              </Grid>
+            </Box>
+          </Container>
+        </Paper>
       </section>
-    </Paper>
   )
 }

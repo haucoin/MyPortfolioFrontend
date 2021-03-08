@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Navbar';
+import Footer from '../components/Footer';
+import ProjectDetails from '../components/ProjectDetails';
 
 /**
  * MyPortfolio
@@ -15,7 +16,7 @@ export default function ViewProjectPage() {
     <React.Fragment>
 
       <Navbar />
-
+      <ProjectDetails />
       <Footer />
 
     </React.Fragment>

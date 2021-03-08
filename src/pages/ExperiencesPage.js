@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Experiences from '../components/ExperienceInformation';
 
 /**
  * MyPortfolio
@@ -15,7 +16,7 @@ export default function ExperiencesPage() {
     <React.Fragment>
       
       <Navbar />
-
+        <Experiences />
       <Footer />
 
     </React.Fragment>

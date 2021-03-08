@@ -6,7 +6,6 @@ import { AppBar, Toolbar, Button, Grid, Drawer, List, ListItem, ListItemIcon, Li
 import { makeStyles } from '@material-ui/core/styles';
 import { ExpandLess, MenuRounded } from '@material-ui/icons';
 import theme from '../theme/theme';
-import logo from '../images/Logo.png';
 
 /**
  * MyPortfolio
@@ -67,7 +66,7 @@ export default function App() {
             <Link to="/" style={{ textDecoration: 'none', color: 'grey' }}>
                 <ListItem button >
                     <div align="center" style={{padding: "10px"}}>
-                        <img src={logo} alt="Holland Aucoin" width="90%"/> 
+                        <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Logo.png" alt="Holland Aucoin" width="90%"/> 
                     </div>
                 </ListItem>
             </Link>
@@ -120,7 +119,7 @@ export default function App() {
                         {/* Show logo if on any page besides the home page */}
                         { window.location.pathname !== "/" ? 
                             <Link to="/">
-                                <img src={logo} alt="Holland Aucoin" width="95%" /> 
+                                <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Logo.png" alt="Holland Aucoin" width="95%" /> 
                             </Link>
                         : <div width="95%"></div> }
                         {['top'].map((anchor) => (
@@ -139,7 +138,7 @@ export default function App() {
             {/* iPad and other tablet device navbar */}
             <MediaQuery minWidth={theme.breakpoints.values.otherPhone + 1} maxWidth={theme.breakpoints.values.iPadPro}>
                 { window.location.pathname !== "/" ? 
-                    <AppBar className={classes.hidden} style={{height: "145px"}}>
+                    <AppBar className={classes.hidden} style={{height: "135px"}}>
                         <Toolbar />
                     </AppBar>
                     : 
@@ -151,7 +150,7 @@ export default function App() {
                     {/* Show logo if on any page besides the home page */}
                     { window.location.pathname !== "/" ? 
                         <Link to="/" align="center">
-                            <img src={logo} alt="Holland Aucoin" width="450" className={classes.img} /> 
+                            <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Logo.png" alt="Holland Aucoin" width="450" className={classes.img} /> 
                         </Link>
                     : null }
                     <Toolbar>
@@ -185,7 +184,7 @@ export default function App() {
                         {/* Show logo if on any page besides the home page */}
                         { window.location.pathname !== "/" ? 
                             <Link to="/" style={{ textDecoration: 'none' }}>
-                                <img src={logo} alt="Holland Aucoin" width="425"/> 
+                                <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Logo.png" alt="Holland Aucoin" width="425"/> 
                             </Link>
                         : null }
 

@@ -10,10 +10,9 @@ import axios from "axios";
 class ProjectService {
 
     /**
-     * Method to get all projects of a given type
-     * @param {String} type 
+     * Method to get all projects
      */
-    async getProjectsByType(type) {
+    async getProjects() {
 
         const axiosConfig = {
             headers: {
@@ -22,7 +21,7 @@ class ProjectService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/projects/all/" + type, axiosConfig);
+        const response = await axios.get("http://localhost:8102/projects/all", axiosConfig);
         return response;
     }
 
@@ -40,7 +39,7 @@ class ProjectService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/projects/" + id, axiosConfig);
+         const response = await axios.get("http://localhost:8102/projects/" + id, axiosConfig);
         return response;
     }
 

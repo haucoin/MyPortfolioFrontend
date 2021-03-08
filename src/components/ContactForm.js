@@ -3,7 +3,6 @@ import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import theme from '../theme/theme';
-import me from '../images/ContactMe.jpg';
 
 /**
  * MyPortfolio
@@ -14,19 +13,9 @@ import me from '../images/ContactMe.jpg';
  */
 
 const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(10),
-      height: theme.spacing(10),
-    },
-  },
   button: {
     color: theme.palette.text.black,
-    backgroundColor: theme.palette.background.white,
+    backgroundColor: "transparent",
     height: "50px",
   },
   halfLg: {
@@ -156,7 +145,7 @@ export default function App() {
         {/* Image that adjusts based on screen size */}
         <Grid item xs={12} md={6}>
           <Box position="relative" height={768}>
-            <img className={classes.fullHeightImage} src={me} alt="" />
+            <img className={classes.fullHeightImage} src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/ContactMe.jpg" alt="" />
           </Box>
         </Grid>
       </Grid>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Projects from '../components/ProjectsTabular';
 
 /**
  * MyPortfolio
@@ -15,7 +16,7 @@ export default function ProjectsPage() {
     <React.Fragment>
 
       <Navbar />
-
+        <Projects />
       <Footer />
 
     </React.Fragment>

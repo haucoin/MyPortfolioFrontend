@@ -10,8 +10,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
  * MyPortfolio
  * @Author Holland Aucoin
  * 
- * Contact Form
- * @Summary This component displays the contact form that is shown on the contact page
+ * Education Courses
+ * @Summary This component displays the accordian display of educational courses
  */
 
 const useStyles = makeStyles(() => ({
@@ -90,7 +90,7 @@ export default function App() {
                   if (course.projectId != null && course.projectId !== "") {
                     return (
                     <AccordionDetails key={course._id} style={{ justifyContent: "flex-end" }}>
-                      <Link to="/" style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
+                      <Link to={{ pathname: '/project', state: { projectId: course.projectId } }} style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
                     </AccordionDetails>
                     )
                   }
@@ -130,7 +130,7 @@ export default function App() {
                   if (course.projectId != null && course.projectId !== "") {
                     return (
                     <AccordionDetails key={course._id} style={{ justifyContent: "flex-end" }}>
-                      <Link to="/" style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
+                      <Link to={{ pathname: '/project', state: { projectId: course.projectId } }} style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
                     </AccordionDetails>
                     )
                   }

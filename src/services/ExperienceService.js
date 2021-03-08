@@ -10,10 +10,10 @@ import axios from "axios";
 class ExperienceService {
 
     /**
-     * Method to get all experiences of a given type
-     * @param {String} type 
+     * Method to get all experiences of a given company name
+     * @param {String} company 
      */
-    async getExperiencesByType(type) {
+    async getExperiencesByCompany(company) {
 
         const axiosConfig = {
             headers: {
@@ -22,7 +22,7 @@ class ExperienceService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/experiences/all/" + type, axiosConfig);
+        const response = await axios.get("http://localhost:8102/experiences/all/" + company, axiosConfig);
         return response;
     }
 

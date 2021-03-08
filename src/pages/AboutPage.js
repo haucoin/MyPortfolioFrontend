@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Biography from '../components/Biography';
+import Recommendations from '../components/Recommendations';
 
 /**
  * MyPortfolio
@@ -15,7 +17,8 @@ export default function AboutPage() {
     <React.Fragment>
       
       <Navbar />
-
+      <Biography />
+      <Recommendations />
       <Footer />
 
     </React.Fragment>
