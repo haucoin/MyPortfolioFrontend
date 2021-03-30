@@ -111,7 +111,7 @@ export default function App() {
   return (
 
       <section>
-        <Paper>
+        <Paper elevation={3}>
           <Container maxWidth="md" >
             <Box py={6}>
               <div align="center" style={{paddingBottom: "25px"}}>

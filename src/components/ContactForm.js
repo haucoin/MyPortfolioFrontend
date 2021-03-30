@@ -3,6 +3,7 @@ import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import theme from '../theme/theme';
+import { Phone, Email } from '@material-ui/icons';
 
 /**
  * MyPortfolio
@@ -69,20 +70,24 @@ export default function App() {
     setMessage(event.target.value);
   }
 
+  const onSubmit = (event) => {
+
+  }
+
   return (
 
     <section>
       <Grid container>
         <Grid item xs={12} md={6}>
-          <Box pt={10} pb={8} display="flex" className={[classes.halfLg, classes.firstBox]}>
+          <Box pt={10} pb={8} display="flex" className={classes.halfLg, classes.firstBox}>
             <Container>
               <Box mb={4}>
-                <Typography variant="h4" component="h2" gutterBottom={true}>Let's get connected.</Typography>
+                <Typography variant="h4" component="h2" gutterBottom={true} color="secondary">Let's get connected.</Typography>
                 <Typography variant="subtitle1" color="textSecondary" paragraph={true}>Determined and passionate software developer <b>actively seeking new opportunities</b> and would love to hear from you.</Typography>
               </Box>
 
               {/* Contact Form with validating fields */}
-              <ValidatorForm onError={errors => console.log(errors)}>
+              <ValidatorForm onError={errors => console.log(errors)} onSubmit={onSubmit}>
                 <Grid container spacing={2} style={{textAlign: "center"}}>
                   <Grid item xs={12} sm={6}>
                     <TextValidator variant="outlined" fullWidth
@@ -141,6 +146,18 @@ export default function App() {
               </ValidatorForm>
             </Container>
           </Box>
+          <Box style={{textAlign: "center", paddingBottom: 20}}>
+
+            <a href="tel:206-698-2700" style={{textDecoration: "none"}}>
+              <Phone fontSize="small" style={{paddingTop: 5, paddingRight: 5, fill: "GrayText"}}/>
+              <Typography style={{verticalAlign: "top"}} variant="overline" color="textSecondary">206-698-2700</Typography>
+            </a>
+            <Typography style={{paddingLeft: 10, paddingRight: 10, verticalAlign: "top"}} variant="overline" color="textSecondary">|</Typography>
+            <a href="mailto:holland.aucoin2@gmail.com" style={{textDecoration: "none"}}>
+              <Email fontSize="small" style={{paddingTop: 5, paddingRight: 5, fill: "GrayText"}}/>
+              <Typography style={{verticalAlign: "top"}} variant="overline" color="textSecondary">holland.aucoin2@gmail.com</Typography>
+            </a>
+           </Box>
         </Grid>
         {/* Image that adjusts based on screen size */}
         <Grid item xs={12} md={6}>
@@ -153,5 +170,3 @@ export default function App() {
 
   )
 }
-
-// linear-gradient(140deg, #F3B0F2 5%, #DF63D3 15%, #8C53CC 50%, #0A8DC8 75%, #51E2EB 100%)"

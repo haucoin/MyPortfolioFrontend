@@ -54,7 +54,7 @@ export default function App() {
     return (
 
         <section>
-            <Paper>
+            <Paper elevation={3}>
             <Container maxWidth="md">
                 <Box pt={8} pb={12} textAlign="center">
                     <Box mb={8}>
@@ -68,7 +68,7 @@ export default function App() {
 
                                     if (index % 2 === 0) {
                                         return ([
-                                            <Grid item xs={12} sm={3}>
+                                            <Grid item xs={12} sm={3} key='grid1 + {index}'>
                                                
                                                 <Avatar alt="" src={recommendation.image} className={classes.avatar} />
                                                 <Typography variant="h6" component="h4" gutterBottom={true}>{recommendation.name}</Typography>
@@ -80,7 +80,7 @@ export default function App() {
                                                     <Mail />
                                                 </IconButton>
                                             </Grid>,
-                                            <Grid item xs={12} sm={9}>
+                                            <Grid item xs={12} sm={9} key='grid2 + {index}'>
                                                 <Typography gutterBottom={true} style={{ textAlign: "justify" }}>"{recommendation.preview}"
                                                     <Button style={{marginLeft: "10px", padding: "0px", backgroundColor: "transparent"}} color="primary" onClick={handleClickOpen('dialog' + recommendation._id)}>
                                                         See More
@@ -104,7 +104,7 @@ export default function App() {
                                     }
                                     else {
                                         return ([
-                                            <Grid item xs={12} sm={9}>
+                                            <Grid item xs={12} sm={9} key='grid1 + {index}'>
                                                 <Typography gutterBottom={true} style={{ textAlign: "justify" }}>"{recommendation.preview}"
                                                     <Button style={{marginLeft: "10px", padding: "0px", backgroundColor: "transparent"}} color="primary" onClick={handleClickOpen('dialog' + recommendation._id)}>
                                                         See More
@@ -124,7 +124,7 @@ export default function App() {
                                                     </DialogContent>
                                                 </Dialog>
                                             </Grid>,
-                                            <Grid item xs={12} sm={3}>
+                                            <Grid item xs={12} sm={3} key='grid2 + {index}'>
                                                 <Avatar alt="" src={recommendation.image} className={classes.avatar} />
                                                 <Typography variant="h6" component="h4" gutterBottom={true}>{recommendation.name}</Typography>
                                                 <Typography variant="body1" color="primary" component="span">{recommendation.position}</Typography><br />
@@ -141,8 +141,8 @@ export default function App() {
                             ))}
                         </MediaQuery>
                         <MediaQuery maxWidth={theme.breakpoints.values.iPad - 1}>
-                            {recommendations.map((recommendation) => ([
-                                <Grid item xs={12} sm={3}>
+                            {recommendations.map((recommendation, index) => ([
+                                <Grid item xs={12} sm={3} key='grid1 + {index}'>
                                     <Avatar alt="" src={recommendation.image} className={classes.avatar} />
                                     <Typography variant="h6" component="h4" gutterBottom={true}>{recommendation.name}</Typography>
                                     <Typography variant="body1" color="primary" component="span">{recommendation.position}</Typography><br />
@@ -153,7 +153,7 @@ export default function App() {
                                         <Mail />
                                     </IconButton>
                                 </Grid>,
-                                <Grid item xs={12} sm={9} style={{ textAlign: "justify" }}>
+                                <Grid item xs={12} sm={9} style={{ textAlign: "justify" }} key='grid2 + {index}'>
                                     <Typography gutterBottom={true}>"{recommendation.preview}"</Typography>
                                     <Button color="primary" onClick={handleClickOpen('dialog' + recommendation._id)}>
                                         See More

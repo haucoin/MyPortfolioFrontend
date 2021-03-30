@@ -63,6 +63,11 @@ const useStyles = makeStyles(() => ({
         height: '800px',
         width: '100%'
       },
+      titlePadding: {
+        [theme.breakpoints.down(960)]: {
+          paddingTop: "50px"
+        }
+      },
 }));
 
 export default function App() {
@@ -108,7 +113,7 @@ export default function App() {
         </Grid>
         {/* Grid for biography */}
         <Grid item xs={12} md={6} style={{alignSelf: "center"}}>
-          <Box pt={6}  display="flex" className={[classes.halfLg, classes.firstBox]}>
+          <Box display="flex" className={classes.halfLg, classes.firstBox, classes.titlePadding}>
             <Container>
               <Box mb={4}>
                 <Typography variant="h4" component="h2" gutterBottom={true}>Get to know me.</Typography>
@@ -118,16 +123,16 @@ export default function App() {
                   spent the last several years building full-stack applications using a variety of languages and frameworks, while learning 
                   and practicing agile methodologies in a team-driven environment.
                 </Typography>
-                <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
+                <Typography variant="subtitle1" color="secondary" paragraph={true} style={{textAlign: "justify"}}>
+                  Aside from that, I am extremely passionate about people, building connections, and servant leadership. More words need to be 
+                  added here to fill all the space but I don't know what to write yet so I will fill it with random words. More words need to be 
+                  added here to fill all the space but I don't know what to write yet so I will fill it with random words.
+                </Typography>
+                <Typography variant="subtitle1" color="secondary" paragraph={true} style={{textAlign: "justify"}}>
                   I grew up playing soccer and continued into my first year of college. I thrive in team environments and enjoy working together 
                   to accomplish a goal. More words need to be added here to fill all the space but I don't know what to write yet so I will fill 
                   it with random words. More words need to be added here to fill all the space but I don't know what to write yet so I will fill 
                   it with random words.
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
-                  Aside from that, I am extremely passionate about people, building connections, and servant leadership. More words need to be 
-                  added here to fill all the space but I don't know what to write yet so I will fill it with random words. More words need to be 
-                  added here to fill all the space but I don't know what to write yet so I will fill it with random words.
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
                   Visit my contact page to get in touch!

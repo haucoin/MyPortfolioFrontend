@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, Typography, Grid, Card, CardMedia } from '@material-ui/core';
+import { Container, Box, Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import theme from '../theme/theme';
 
@@ -48,7 +48,15 @@ export default function App() {
   return (
 
     <section>
-      <Box pt={4} pb={2}>
+      <Box pt={8} pb={4}>
+        <Container maxWidth="md">
+            <Box textAlign="left" mb={2}>
+              <Typography variant="h4" component="h2" gutterBottom={true} color="secondary">Learn about what I've done.</Typography>
+              <Typography variant="subtitle1" color="secondary">
+                Listed below are the experiences where I have been able to learn and grow, and include positions that allowed me to serve as a leader in team environments.
+              </Typography>
+            </Box>
+          </Container>
         {/* Section displaying all education information */}
         <Container maxWidth="md">
           <Grid container>
@@ -64,8 +72,16 @@ export default function App() {
                 </Box>
                 <Box>
                   <Typography variant="body1"><b>Bachelor of Science in Computer Programming - </b></Typography>
-                  <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block} style={{textAlign: "justify"}}>Laudantium, unde aliquam sit accusantium a explicabo maiores doloribus aut, rerum accusamus alias saepe molestias ut suscipit voluptate voluptatibus repellendus fuga vero. Error delectus odit, numquam laborum consectetur mollitia corrupti quo neque, quibusdam tempore debitis voluptatum vitae! Ea explicabo totam excepturi! Eius?</Typography>
-                  <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block} style={{textAlign: "justify"}}>Alias sunt voluptas ratione modi dolore nostrum debitis nihil. Nemo, ratione repellat quia doloremque perferendis fuga cumque ex corporis laborum distinctio dolorum deserunt voluptates ea architecto ab, esse omnis quas provident. Maiores sed ipsam eos quis.</Typography>
+                  <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block} style={{textAlign: "justify"}}>
+                    This degree focuses on developing full stack applications using a variety of programming languages, web frameworks, and cloud 
+                    computing platforms with the integration of database system management and administration. With a built-in emphasis on the 
+                    SDLC process, technological literacy skills are gained by creating the necessary components such as comprehensive project 
+                    proposals, in-depth design documentation, detailed requirement specifications, thorough testing phases, and more.
+                  </Typography>
+                  <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block} style={{textAlign: "justify"}}>
+                    The structure of the program incorporates a significant amount of team environments that assist in the growth of teamwork 
+                    abilities, organizational communication, and project management skills through the use of agile methodologies.
+                  </Typography>
                 </Box>
               </Box>
             </Grid>

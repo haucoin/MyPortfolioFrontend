@@ -144,12 +144,21 @@ export default function App() {
                                     {projects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
-                                            <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
-                                                <CardActionArea>
-                                                    <CardMedia component="img" className={classes.media} image={project.coverImage} />
-                                                    <CardHeader style={{height: 40}} subheader={project.name} sub titleTypographyProps={{ gutterBottom: false }} />
-                                                </CardActionArea>
-                                            </Link>
+                                            {project._id === "6042f5de5167ce01f41df519" ? 
+                                                <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <CardActionArea>
+                                                        <CardMedia component="img" image={project.coverImage} />
+                                                        <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                    </CardActionArea>
+                                                </Link>
+                                            :
+                                                <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <CardActionArea>
+                                                        <CardMedia component="img" image={project.coverImage} />
+                                                        <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                    </CardActionArea>
+                                                </Link>
+                                            }
                                             </Card>
                                         </Grid>
                                     ))
@@ -163,12 +172,23 @@ export default function App() {
                                 <Grid container spacing={3}>
 
                                     {javaProjects.map((project, id) => (
-                                        <Grid item xs={12} sm={6} md={4}>
+                                        <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
-                                                <CardActionArea href="#">
-                                                    <CardMedia component="img" className={classes.media} image={project.coverImage} />
-                                                    <CardHeader subheader={project.name} sub titleTypographyProps={{ gutterBottom: false }} />
-                                                </CardActionArea>
+                                                {project._id === "6042f5de5167ce01f41df519" ? 
+                                                    <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <CardActionArea>
+                                                            <CardMedia component="img" image={project.coverImage} />
+                                                            <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                        </CardActionArea>
+                                                    </Link>
+                                                :
+                                                    <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <CardActionArea>
+                                                            <CardMedia component="img" image={project.coverImage} />
+                                                            <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                        </CardActionArea>
+                                                    </Link>
+                                                }
                                             </Card>
                                         </Grid>
                                     ))
@@ -182,12 +202,14 @@ export default function App() {
                                 <Grid container spacing={3}>
 
                                     {cProjects.map((project, id) => (
-                                        <Grid item xs={12} sm={6} md={4}>
+                                        <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
-                                                <CardActionArea href="#">
-                                                    <CardMedia component="img" className={classes.media} image={project.coverImage} />
-                                                    <CardHeader subheader={project.name} sub titleTypographyProps={{ gutterBottom: false }} />
-                                                </CardActionArea>
+                                                <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <CardActionArea>
+                                                        <CardMedia component="img" image={project.coverImage} />
+                                                        <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                    </CardActionArea>
+                                                </Link>
                                             </Card>
                                         </Grid>
                                     ))
@@ -201,12 +223,14 @@ export default function App() {
                                 <Grid container spacing={3}>
 
                                     {phpProjects.map((project, id) => (
-                                        <Grid item xs={12} sm={6} md={4}>
+                                        <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
-                                                <CardActionArea href="#">
-                                                    <CardMedia component="img" className={classes.media} image={project.coverImage} />
-                                                    <CardHeader subheader={project.name} sub titleTypographyProps={{ gutterBottom: false }} />
-                                                </CardActionArea>
+                                                <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <CardActionArea>
+                                                        <CardMedia component="img" image={project.coverImage} />
+                                                        <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                    </CardActionArea>
+                                                </Link>
                                             </Card>
                                         </Grid>
                                     ))
@@ -220,12 +244,23 @@ export default function App() {
                                 <Grid container spacing={3}>
 
                                     {javascriptProjects.map((project, id) => (
-                                        <Grid item xs={12} sm={6} md={4}>
+                                        <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
-                                                <CardActionArea href="#">
-                                                    <CardMedia component="img" className={classes.media} image={project.coverImage} />
-                                                    <CardHeader subheader={project.name} sub titleTypographyProps={{ gutterBottom: false }} />
-                                                </CardActionArea>
+                                                {project._id === "6042f5de5167ce01f41df519" ? 
+                                                    <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <CardActionArea>
+                                                            <CardMedia component="img" image={project.coverImage} />
+                                                            <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                        </CardActionArea>
+                                                    </Link>
+                                                :
+                                                    <Link to={{ pathname: '/project', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <CardActionArea>
+                                                            <CardMedia component="img" image={project.coverImage} />
+                                                            <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
+                                                        </CardActionArea>
+                                                    </Link>
+                                                }
                                             </Card>
                                         </Grid>
                                     ))

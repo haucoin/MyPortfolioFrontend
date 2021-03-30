@@ -149,13 +149,16 @@ export default function App(props) {
                 }
               </Carousel>
             </Container>
-
+            
+            {project.gitHub !== "" && project.gitHub !== null ? 
             <div align="center" style={{padding: 20, maxWidth: "md"}}>
               <Typography variant="body1" color="textSecondary" paragraph={true} >
                 To view more details about this project, please visit my <a target="_blank" href={project.gitHub} rel="noreferrer">GitHub.</a>
               </Typography>
             </div>
-
+            :
+            <br/>
+            }
           </div>
           )
         }

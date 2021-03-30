@@ -17,9 +17,8 @@ const useStyles = makeStyles(() => ({
         position: "relative",
     },
     backgroundImage: {
-        width: "auto",
-        height: '80vh',
-        transform: "translate(-25%, 20%) rotate(90deg)",
+        width: '100%',
+        height: 'auto',
     },
     cutoutImagePhone: {
         position: "absolute",
@@ -52,30 +51,24 @@ export default function App() {
         <div>
             {/* Image and logo sized for phones */}
             <MediaQuery maxWidth={theme.breakpoints.values.otherPhone}>
-                <div className={classes.div}>
-                    <Card raised={true}>
-                        <CardMedia className={classes.backgroundImage} component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideo.mp4" autoPlay playsInline loop muted controls={false}/>
-                        <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/CutoutPhone.png" alt="Holland Aucoin" className={classes.cutoutImagePhone} />
-                    </Card>
+                <div className={classes.div} style={{height: "70vh"}}>
+                    <CardMedia className={classes.backgroundImage} component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideoPhone.mp4" autoPlay playsInline loop muted controls={false}/>
+                    <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/CutoutPhone.png" alt="Holland Aucoin" className={classes.cutoutImagePhone} />
                 </div>
             </MediaQuery>
             {/* Image and logo sized for iPads and other tablets */}
             <MediaQuery minWidth={theme.breakpoints.values.otherPhone + 1} maxWidth={theme.breakpoints.values.iPadPro}>
                 <div className={classes.div}>
-                    <Card raised={true}>
-                        <CardMedia component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideo.mp4" autoPlay playsInline loop muted controls={false} />
-                        <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Cutout.png" alt="Holland Aucoin" className={classes.cutoutImageTablet} />
-                    </Card>
+                    <CardMedia component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideo.mp4" autoPlay playsInline loop muted controls={false} />
+                    <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Cutout.png" alt="Holland Aucoin" className={classes.cutoutImageTablet} />
                 </div>
             </MediaQuery>
             {/* Image and logo sized for all devices larger than an iPad Pro */}
             <MediaQuery minWidth={theme.breakpoints.values.iPadPro + 1} >
-                <Card raised={true} >
-                    <div className={classes.div}>
-                        <CardMedia component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideo.mp4" autoPlay playsInline loop muted controls={false} />
-                        <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Cutout.png" alt="Holland Aucoin" className={classes.cutoutImage} />
-                    </div>
-                </Card>
+                <div className={classes.div}>
+                    <CardMedia component='video' image="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/backgroundVideo.mp4" autoPlay playsInline loop muted controls={false} />
+                    <img src="https://hollandaucoin-images.s3-us-west-1.amazonaws.com/main/Cutout.png" alt="Holland Aucoin" className={classes.cutoutImage} />
+                </div>
             </MediaQuery>
         </div>
     )
