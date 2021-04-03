@@ -14,34 +14,10 @@ import theme from '../theme/theme';
 const useStyles = makeStyles(() => ({
   block: {
     marginBottom: theme.spacing(3),
-  },
-  imageBoxRoot: {
-    maxWidth: 512,
-    paddingBottom: theme.spacing(8),
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    [theme.breakpoints.up(960)]: {
-        paddingTop: theme.spacing(12),
-        paddingLeft: theme.spacing(6),
-    }
-  },
-  cardRoot: {
-    position: 'relative',
-    paddingTop: '85%',
-    margin: 'auto',
-    overflow: 'hidden',
-  },
-  cardMedia: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    border: 0
   }
 }));
 
-export default function App() {
+export default function EducationInformation() {
 
   const classes = useStyles();
 
@@ -49,19 +25,21 @@ export default function App() {
 
     <section>
       <Box pt={8} pb={4}>
+        {/* Section displaying education title and intro */}
         <Container maxWidth="md">
-            <Box textAlign="left" mb={2}>
-              <Typography variant="h4" component="h2" gutterBottom={true} color="secondary">Learn about what I've done.</Typography>
-              <Typography variant="subtitle1" color="secondary">
-                Listed below are the experiences where I have been able to learn and grow, and include positions that allowed me to serve as a leader in team environments.
-              </Typography>
-            </Box>
-          </Container>
+          <Box textAlign="left" mb={2}>
+            <Typography variant="h4" component="h2" gutterBottom={true}>View my technical background.</Typography>
+            <Typography variant="subtitle1" color="textSecondary">
+              Below shows the knowledge and skills I have gained over the years of becoming a software developer, as well as the 
+              courses I have completed at Grand Canyon University with their primmary focus and any technologies used.
+            </Typography>
+          </Box>
+        </Container>
         {/* Section displaying all education information */}
         <Container maxWidth="md">
           <Grid container>
             <Grid item xs={12} md={12}>
-              <Box className={classes.contentBox}>
+              <Box>
                 <Box mt={4}>
                   <Typography variant="h5">Grand Canyon University</Typography>
                   <hr width="150px" align="left" />

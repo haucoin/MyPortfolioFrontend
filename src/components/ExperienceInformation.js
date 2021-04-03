@@ -53,7 +53,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-export default function App() {
+export default function ExperienceInformation() {
 
     const classes = useStyles();
 
@@ -84,81 +84,32 @@ export default function App() {
 
     return (
 
-    <section>
-      {/* Check to see if REST call has finished before trying to render */}
-      { !isLoading && (
-        <Box pt={8} >
-          <Container maxWidth="md">
-            <Box textAlign="left" mb={2}>
-              <Typography variant="h4" component="h2" gutterBottom={true}>Learn about what I've done.</Typography>
-              <Typography variant="subtitle1" color="textSecondary" color="secondary">
-                Listed below are the experiences where I have been able to learn and grow, and include positions that allowed me to serve as a leader in team environments.
-              </Typography>
-            </Box>
-          </Container>
-          {/* Section displaying all GCU experience information */}
-          <Container maxWidth="md" style={{paddingBottom: 30}}>
-            <Grid container>
-              <Grid item xs={12} md={7}>
-                <Box className={classes.contentBox}>
-                  <Box mt={4}>
-                    <Typography variant="h5">Grand Canyon University</Typography>
-                    <hr width="150px" align="left" />
-                    <br/>
-                  </Box>
-                  <Box>
-                    {
-                      GCUExperiences.map((experience, index) => {
-
-                        let location = "";
-
-                        if(index === 0) {
-                          location = 
-                            <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <Typography variant="body1"><b>{experience.name}</b></Typography>
-                            <Typography variant="body2" color="textSecondary">{experience.location}</Typography>
-                          </div>
-                        }
-                        else {
-                          location = 
-                            <Typography variant="body1"><b>{experience.name}</b></Typography>
-                        }
-
-                        return (
-                          <div key={index}>
-                            {location}
-                            <Typography variant="overline">{experience.startDate} - {experience.endDate}</Typography>
-                            <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block}>{experience.description}</Typography>       
-                          </div>
-                        )
-                      })
-                    }
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={5}>
-                <Box className={classes.imageBoxRoot}>
-                  <Card className={classes.cardRoot}>
-                    <CardMedia className={classes.cardMedia} component="img" src={GCUExperiences.length > 0 ? GCUExperiences[0].image : null} alt={GCUExperiences.length > 0 ? GCUExperiences[0].name : null}/>
-                  </Card>
-                </Box>
-              </Grid>
-            </Grid>
-          </Container>
-
-          <Paper elevation={3}>
-            <Container maxWidth="md" style={{paddingTop: 30, paddingBottom: 30}}>
+      <section>
+        {/* Check to see if REST call has finished before trying to render */}
+        { !isLoading && (
+          <Box pt={8} >
+            <Container maxWidth="md">
+              <Box textAlign="left" mb={2}>
+                <Typography variant="h4" component="h2" gutterBottom={true}>Learn about what I've done.</Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                  Listed below are some of the professional and volunteer experiences that have allowed me to learn, grow, and serve 
+                  as a leader in various team environments.
+                </Typography>
+              </Box>
+            </Container>
+            {/* Section displaying all GCU experience information */}
+            <Container maxWidth="md" style={{paddingBottom: 30}}>
               <Grid container>
                 <Grid item xs={12} md={7}>
                   <Box className={classes.contentBox}>
-                    <Box mt={2}>
-                      <Typography variant="h5">Grand Canyon Education</Typography>
+                    <Box mt={4}>
+                      <Typography variant="h5">Grand Canyon University</Typography>
                       <hr width="150px" align="left" />
                       <br/>
                     </Box>
                     <Box>
-                      {
-                        GCEExperiences.map((experience, index) => {
+                      {/* Iterate through GCU experiences */}
+                      {GCUExperiences.map((experience, index) => {
 
                           let location = "";
 
@@ -189,76 +140,76 @@ export default function App() {
                 <Grid item xs={12} md={5}>
                   <Box className={classes.imageBoxRoot}>
                     <Card className={classes.cardRoot}>
-                      <CardMedia className={classes.cardMedia} component="img" src={GCEExperiences.length > 0 ? GCEExperiences[0].image : null} alt={GCEExperiences.length > 0 ? GCEExperiences[0].name : null}/>
+                      <CardMedia className={classes.cardMedia} component="img" src={GCUExperiences.length > 0 ? GCUExperiences[0].image : null} alt={GCUExperiences.length > 0 ? GCUExperiences[0].name : null}/>
                     </Card>
                   </Box>
                 </Grid>
               </Grid>
             </Container>
-          </Paper>
 
-          <Container maxWidth="md" style={{paddingTop: 30}}>
-            <Grid container>
-              <Grid item xs={12} md={7}>
-                <Box className={classes.contentBox}>
-                  <Box mt={2}>
-                    <Typography variant="h5">Association of Washington Student Leaders</Typography>
-                    <hr width="150px" align="left" />
-                    <br/>
-                  </Box>
-                  <Box>
-                    {
-                      AWSLExperiences.map((experience, index) => {
+            <Paper elevation={3}>
+              <Container maxWidth="md" style={{paddingTop: 30, paddingBottom: 30}}>
+                <Grid container>
+                  <Grid item xs={12} md={7}>
+                    <Box className={classes.contentBox}>
+                      <Box mt={2}>
+                        <Typography variant="h5">Grand Canyon Education</Typography>
+                        <hr width="150px" align="left" />
+                        <br/>
+                      </Box>
+                      <Box>
+                        {/* Iterate through GCE experiences */}
+                        {GCEExperiences.map((experience, index) => {
 
-                        let location = "";
+                            let location = "";
 
-                        if(index === 0) {
-                          location = 
-                            <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <Typography variant="body1"><b>{experience.name}</b></Typography>
-                            <Typography variant="body2" color="textSecondary">{experience.location}</Typography>
-                          </div>
+                            if(index === 0) {
+                              location = 
+                                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <Typography variant="body1"><b>{experience.name}</b></Typography>
+                                <Typography variant="body2" color="textSecondary">{experience.location}</Typography>
+                              </div>
+                            }
+                            else {
+                              location = 
+                                <Typography variant="body1"><b>{experience.name}</b></Typography>
+                            }
+
+                            return (
+                              <div key={index}>
+                                {location}
+                                <Typography variant="overline">{experience.startDate} - {experience.endDate}</Typography>
+                                <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block}>{experience.description}</Typography>       
+                              </div>
+                            )
+                          })
                         }
-                        else {
-                          location = 
-                            <Typography variant="body1"><b>{experience.name}</b></Typography>
-                        }
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} md={5}>
+                    <Box className={classes.imageBoxRoot}>
+                      <Card className={classes.cardRoot}>
+                        <CardMedia className={classes.cardMedia} component="img" src={GCEExperiences.length > 0 ? GCEExperiences[0].image : null} alt={GCEExperiences.length > 0 ? GCEExperiences[0].name : null}/>
+                      </Card>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Container>
+            </Paper>
 
-                        return (
-                          <div key={index}>
-                            {location}
-                            <Typography variant="overline">{experience.startDate} - {experience.endDate}</Typography>
-                            <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block}>{experience.description}</Typography>       
-                          </div>
-                        )
-                      })
-                    }
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={5}>
-                <Box className={classes.imageBoxRootBottom}>
-                  <Card className={classes.cardRoot}>
-                    <CardMedia className={classes.cardMedia} component="img" src={AWSLExperiences.length > 0 ? AWSLExperiences[0].image : null} alt={AWSLExperiences.length > 0 ? AWSLExperiences[0].name : null}/>
-                  </Card>
-                </Box>
-              </Grid>
-            </Grid>
-          </Container>
-
-          <Paper elevation={3}>
-            <Container maxWidth="md" style={{paddingTop: 30, paddingBottom: 30}}>
+            <Container maxWidth="md" style={{paddingTop: 30}}>
               <Grid container>
                 <Grid item xs={12} md={7}>
                   <Box className={classes.contentBox}>
                     <Box mt={2}>
-                      <Typography variant="h5">University of Redlands</Typography>
-                      <hr width="150px" align="left" />
+                      <Typography variant="h5">Association of Washington Student Leaders</Typography>
+                      <hr width="250px" align="left" />
                       <br/>
                     </Box>
                     <Box>
-                    {
-                        URExperiences.map((experience, index) => {
+                      {/* Iterate through AWSL experiences */}
+                      {AWSLExperiences.map((experience, index) => {
 
                           let location = "";
 
@@ -287,20 +238,68 @@ export default function App() {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                  <Box className={classes.imageBoxRoot}>
+                  <Box className={classes.imageBoxRootBottom}>
                     <Card className={classes.cardRoot}>
-                      <CardMedia className={classes.cardMedia} component="img" src={URExperiences.length > 0 ? URExperiences[0].image : null} alt={URExperiences.length > 0 ? URExperiences[0].name : null}/>
+                      <CardMedia className={classes.cardMedia} component="img" src={AWSLExperiences.length > 0 ? AWSLExperiences[0].image : null} alt={AWSLExperiences.length > 0 ? AWSLExperiences[0].name : null}/>
                     </Card>
                   </Box>
                 </Grid>
               </Grid>
             </Container>
-          </Paper>
 
-        </Box>
-      )
-      }
-    </section>
+            <Paper elevation={3}>
+              <Container maxWidth="md" style={{paddingTop: 30, paddingBottom: 30}}>
+                <Grid container>
+                  <Grid item xs={12} md={7}>
+                    <Box className={classes.contentBox}>
+                      <Box mt={2}>
+                        <Typography variant="h5">University of Redlands</Typography>
+                        <hr width="150px" align="left" />
+                        <br/>
+                      </Box>
+                      <Box>
+                        {/* Iterate through UR experiences */}
+                        {URExperiences.map((experience, index) => {
 
+                            let location = "";
+
+                            if(index === 0) {
+                              location = 
+                                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <Typography variant="body1"><b>{experience.name}</b></Typography>
+                                <Typography variant="body2" color="textSecondary">{experience.location}</Typography>
+                              </div>
+                            }
+                            else {
+                              location = 
+                                <Typography variant="body1"><b>{experience.name}</b></Typography>
+                            }
+
+                            return (
+                              <div key={index}>
+                                {location}
+                                <Typography variant="overline">{experience.startDate} - {experience.endDate}</Typography>
+                                <Typography variant="body1" color="textSecondary" paragraph={true} className={classes.block}>{experience.description}</Typography>       
+                              </div>
+                            )
+                          })
+                        }
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} md={5}>
+                    <Box className={classes.imageBoxRoot}>
+                      <Card className={classes.cardRoot}>
+                        <CardMedia className={classes.cardMedia} component="img" src={URExperiences.length > 0 ? URExperiences[0].image : null} alt={URExperiences.length > 0 ? URExperiences[0].name : null}/>
+                      </Card>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Container>
+            </Paper>
+
+          </Box>
+        )}
+      </section>
     )
 }

@@ -14,7 +14,6 @@ export default function ViewProjectPage() {
   
   return (
     <React.Fragment>
-
       <Navbar />
       <ProjectDetails />
       <Footer />

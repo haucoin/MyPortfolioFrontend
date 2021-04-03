@@ -1,21 +1,21 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import ContactSubmission from '../components/ContactSubmission';
 import Footer from '../components/Footer';
-import Projects from '../components/ProjectsTabular';
 
 /**
  * MyPortfolio
  * @Author Holland Aucoin
  * 
- * Projects Page
- * @Summary This page holds the components that are shown when a user presses the projects page
+ * Confirmation Page
+ * @Summary This page holds the components that are shown when a user presses submits a contact form
  */
-export default function ProjectsPage() {
+export default function ContactPage() {
   
   return (
     <React.Fragment>
       <Navbar />
-        <Projects />
+      <ContactSubmission />
       <Footer />
 
     </React.Fragment>

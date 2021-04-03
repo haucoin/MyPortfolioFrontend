@@ -1,6 +1,6 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
-import { CardMedia, Card } from '@material-ui/core';
+import { CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import theme from '../theme/theme';
 
@@ -43,11 +43,12 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-export default function App() {
+export default function BackgroundVideo() {
 
     const classes = useStyles();
 
     return (
+        
         <div>
             {/* Image and logo sized for phones */}
             <MediaQuery maxWidth={theme.breakpoints.values.otherPhone}>

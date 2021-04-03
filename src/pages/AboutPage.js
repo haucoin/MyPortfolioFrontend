@@ -15,7 +15,6 @@ export default function AboutPage() {
   
   return (
     <React.Fragment>
-      
       <Navbar />
       <Biography />
       <Recommendations />

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
-import service from '../services/SkillService';
-import { makeStyles } from '@material-ui/core/styles';
 import { Code, Timeline, Web, Laptop, Layers, ViewColumn, ArrowRightAlt } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 import theme from '../theme/theme';
+import service from '../services/SkillService';
 
 /**
  * MyPortfolio
@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function App() {
+export default function IntroductionSkills() {
 
   // Creating variables of skill lists to be filled be appropriate service call
   const [languageSkills, setLanguages] = React.useState([]);
@@ -89,12 +89,14 @@ export default function App() {
       <section>
         <Container maxWidth="md" >
           <Box pt={8} pb={4}>
+            {/* Title and introduction section */}
             <div align="center" style={{paddingBottom: "25px"}}>
               <Typography variant="h5" gutterBottom={true}>Skills & Expertise</Typography>
               <hr width="100px" align="center"/>
             </div>
-            <Typography variant="subtitle1" color="textSecondary" color="secondary" style={{textAlign: "justify", paddingBottom: 20}}>
-              Listed below are the experiences where I have been able to learn and grow, and include positions that allowed me to serve as a leader in team environments.
+            <Typography variant="subtitle1" color="textSecondary" style={{textAlign: "justify", paddingBottom: 20}}>
+              During my degree program I was able to aquire hands-on experience within various aspects of software development that 
+              allowed me to accumulate a wide variety of technical knowledge and skills, some of which are shown below.
             </Typography>
             <Grid container spacing={4} style={{ justifyContent: "center" }}>
               {/* Iterate through the skills using map, and use index variable to display each icon and title */}
@@ -108,6 +110,7 @@ export default function App() {
               }
             </Grid>
           </Box>
+          {/* Button to go to the education page */}
           <Box mb={8} textAlign="center">
             <Button href="/education" color="primary" endIcon={<ArrowRightAlt />}>See more</Button>
           </Box>

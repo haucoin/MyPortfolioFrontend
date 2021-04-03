@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import MediaQuery from 'react-responsive';
-import { Container, Box, Typography, Grid, Paper } from '@material-ui/core';
-import service from '../services/ProjectService';
-import theme from '../theme/theme';
 import { useLocation } from 'react-router-dom';
-import Carousel from 'react-material-ui-carousel'
-
+import { Container, Box, Typography, Grid, Paper } from '@material-ui/core';
+import Carousel from 'react-material-ui-carousel';
+import theme from '../theme/theme';
+import service from '../services/ProjectService';
 
 /**
  * MyPortfolio
@@ -15,7 +14,7 @@ import Carousel from 'react-material-ui-carousel'
  * @Summary This component displays the details of an individual project
  */
 
-export default function App(props) {
+export default function ProjectDetails() {
 
   // Creating variable of project to be filled by the service call
   const [project, setProject] = React.useState();
@@ -115,7 +114,9 @@ export default function App(props) {
                           {description}
                         </Typography>
                         {/* Display the appropriate design image using the index */}
-                        <img style={{maxWidth: '100%', maxHeight: 500}} src={project.designImages[index]} alt={index} />
+                        <a href={project.designImages[index]} target="_blank" rel="noreferrer">
+                          <img style={{maxWidth: '100%', maxHeight: 500}} src={project.designImages[index]} alt={index} />
+                        </a>
                       </div>
                     )
                   }
@@ -143,13 +144,16 @@ export default function App(props) {
                         <b>{key.substr(3, key.length)}</b>
                       </Typography>
                       {/* Display the appropriate design image using the key */}
-                      <img style={{maxWidth: '100%', maxHeight: 500}} src={project.finalImages[key]} alt={key} />
+                      <a href={project.finalImages[key]} target="_blank" rel="noreferrer">
+                        <img style={{maxWidth: '100%', maxHeight: 500}} src={project.finalImages[key]} alt={key} />
+                      </a>
                     </div>
                   )
                 }
               </Carousel>
             </Container>
             
+            {/* If there is a GitHub link, included it */}
             {project.gitHub !== "" && project.gitHub !== null ? 
             <div align="center" style={{padding: 20, maxWidth: "md"}}>
               <Typography variant="body1" color="textSecondary" paragraph={true} >

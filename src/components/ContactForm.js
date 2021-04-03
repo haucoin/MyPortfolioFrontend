@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import theme from '../theme/theme';
 import { Phone, Email } from '@material-ui/icons';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { makeStyles } from '@material-ui/core/styles';
+import theme from '../theme/theme';
+import service from './../services/MailGunService';
 
 /**
  * MyPortfolio
@@ -42,7 +44,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function App() {
+export default function ContactForm() {
 
   const classes = useStyles();
 
@@ -53,7 +55,7 @@ export default function App() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  // Set variable to input on the change
+  // Set variables to input value on the change
   const onChangeFirstName = (event) => {
     setFirstName(event.target.value);
   }
@@ -70,8 +72,31 @@ export default function App() {
     setMessage(event.target.value);
   }
 
-  const onSubmit = (event) => {
+  let history = useHistory();
 
+  // On the submission of the contact form
+  const onSubmit = async (event) => {
+
+    // Set the fields to one variable
+    const fields = {
+      "firstName": firstName,
+      "lastName": lastName,
+      "email": email,
+      "subject": subject,
+      "message": message
+    }
+
+    // Call the sendEmail method in the service using the fields variable
+    let status = await service.sendEmail(fields);
+    event.preventDefault();
+
+    // Send to confirmation page if successful, or give error alert
+    if (status !== "") {
+      history.push("/confirmation");
+    }
+    else {
+      alert("There was a problem processing your request. Please try again later.");
+    }
   }
 
   return (
@@ -81,9 +106,12 @@ export default function App() {
         <Grid item xs={12} md={6}>
           <Box pt={10} pb={8} display="flex" className={classes.halfLg, classes.firstBox}>
             <Container>
+              {/* Title information of contact form */}
               <Box mb={4}>
-                <Typography variant="h4" component="h2" gutterBottom={true} color="secondary">Let's get connected.</Typography>
-                <Typography variant="subtitle1" color="textSecondary" paragraph={true}>Determined and passionate software developer <b>actively seeking new opportunities</b> and would love to hear from you.</Typography>
+                <Typography variant="h4" component="h2" gutterBottom={true} >Let's get connected.</Typography>
+                <Typography variant="subtitle1" color="textSecondary" paragraph={true}>
+                  I am a determined and passionate software developer <b>actively seeking new opportunities</b> and would love to 
+                  hear from you. Send me a message!</Typography>
               </Box>
 
               {/* Contact Form with validating fields */}
@@ -146,8 +174,9 @@ export default function App() {
               </ValidatorForm>
             </Container>
           </Box>
-          <Box style={{textAlign: "center", paddingBottom: 20}}>
 
+          {/* Phone and email section */}
+          <Box style={{textAlign: "center", paddingBottom: 20}}>
             <a href="tel:206-698-2700" style={{textDecoration: "none"}}>
               <Phone fontSize="small" style={{paddingTop: 5, paddingRight: 5, fill: "GrayText"}}/>
               <Typography style={{verticalAlign: "top"}} variant="overline" color="textSecondary">206-698-2700</Typography>
@@ -159,6 +188,7 @@ export default function App() {
             </a>
            </Box>
         </Grid>
+        
         {/* Image that adjusts based on screen size */}
         <Grid item xs={12} md={6}>
           <Box position="relative" height={768}>

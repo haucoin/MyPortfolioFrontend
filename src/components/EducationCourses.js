@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Accordion, Container, Typography, AccordionDetails, AccordionSummary } from '@material-ui/core';
-import service from '../services/CourseService';
-import theme from '../theme/theme';
-import { makeStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { makeStyles } from '@material-ui/core/styles';
+import theme from '../theme/theme';
+import service from '../services/CourseService';
 
 /**
  * MyPortfolio
@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function App() {
+export default function EducationCourses() {
 
   // Creating variables of accordion expansion and course information
   const [expanded, setExpanded] = React.useState(false);
@@ -128,11 +128,21 @@ export default function App() {
                 {/* Add button to view the associated project if the course contains a project */}
                 {(() => {
                   if (course.projectId != null && course.projectId !== "") {
-                    return (
-                    <AccordionDetails key={course._id} style={{ justifyContent: "flex-end" }}>
-                      <Link to={{ pathname: '/project', state: { projectId: course.projectId } }} style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
-                    </AccordionDetails>
-                    )
+
+                    if(course.projectId === "6042f5de5167ce01f41df519") {
+                      return (
+                        <AccordionDetails key={course._id} style={{ justifyContent: "flex-end" }}>
+                          <Link to='/portfolio' style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
+                        </AccordionDetails>
+                      )
+                    }
+                    else {
+                      return (
+                        <AccordionDetails key={course._id} style={{ justifyContent: "flex-end" }}>
+                          <Link to={{ pathname: '/project', state: { projectId: course.projectId } }} style={{ textDecoration: 'none', paddingRight: "25px" }}>View Project</Link>
+                        </AccordionDetails>
+                        )
+                    }
                   }
                 })()}
             </Accordion>

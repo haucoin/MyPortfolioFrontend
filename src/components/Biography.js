@@ -14,29 +14,6 @@ import theme from '../theme/theme';
  */
 
 const useStyles = makeStyles(() => ({
-      contentBox: {
-        maxWidth: theme.breakpoints.values['md'],
-        paddingTop: theme.spacing(4),
-        paddingBottom: theme.spacing(4),
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'left',
-      },
-      img: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        objectFit: 'cover',
-        height: 512,
-        width: '100%'
-      },
-      button: {
-        color: theme.palette.text.black,
-        backgroundColor: "transparent",
-        height: "50px",
-      },
       halfLg: {
         [theme.breakpoints.up('lg')]: {
           maxWidth: theme.breakpoints.values['lg'] / 2
@@ -70,10 +47,9 @@ const useStyles = makeStyles(() => ({
       },
 }));
 
-export default function App() {
+export default function Biography() {
 
   const classes = useStyles();
-
 
   return (
 
@@ -120,19 +96,19 @@ export default function App() {
                 <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
                   Hello, thanks for visiting my portfolio. My name is Holland Aucoin and I am currently a student at Grand Canyon University 
                   in Phoenix, Arizona, pursuing a Bachelor of Science in Computer Programming, scheduled to graduate in April 2021. I have 
-                  spent the last several years building full-stack applications using a variety of languages and frameworks, while learning 
+                  spent the last several years building full stack applications using a variety of languages and frameworks, while learning 
                   and practicing agile methodologies in a team-driven environment.
                 </Typography>
-                <Typography variant="subtitle1" color="secondary" paragraph={true} style={{textAlign: "justify"}}>
-                  Aside from that, I am extremely passionate about people, building connections, and servant leadership. More words need to be 
-                  added here to fill all the space but I don't know what to write yet so I will fill it with random words. More words need to be 
-                  added here to fill all the space but I don't know what to write yet so I will fill it with random words.
+                <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
+                  Aside from that, I am extremely passionate about people, building connections, and servant leadership. This passion began 
+                  in high school while being involved in ASB and attending a leadership camp each summer, and has grown ever since, as I have 
+                  continued to be involved in similiar organizations and volunteered at the same camp during my years in college (If you are 
+                  curious about this camp, ask me! I could talk about it for hours).
                 </Typography>
-                <Typography variant="subtitle1" color="secondary" paragraph={true} style={{textAlign: "justify"}}>
-                  I grew up playing soccer and continued into my first year of college. I thrive in team environments and enjoy working together 
-                  to accomplish a goal. More words need to be added here to fill all the space but I don't know what to write yet so I will fill 
-                  it with random words. More words need to be added here to fill all the space but I don't know what to write yet so I will fill 
-                  it with random words.
+                <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
+                  I also grew up playing competitive soccer and continued into my first year of college, which had a huge influential on my 
+                  character. It taught me discipline and work ethic, resilience and how to handle adversity, the value and potential of a team 
+                  that works together, and so much more. 
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
                   Visit my contact page to get in touch!

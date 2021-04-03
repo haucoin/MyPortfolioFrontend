@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage.js';
 import ProjectsPage from './pages/ProjectsPage.js';
 import ViewProjectPage from './pages/ViewProjectPage.js';
+import PortfolioPage from './pages/PortfolioPage.js';
 import ExperiencesPage from './pages/ExperiencesPage.js';
 import EducationPage from './pages/EducationPage.js';
 import AboutPage from './pages/AboutPage.js';
 import ContactPage from './pages/ContactPage.js';
+import ConfirmationPage from './pages/ConfirmationPage.js';
 
 /**
  * MyPortfolio
@@ -31,6 +33,9 @@ export default function App() {
             <Route exact path="/project">
               <ViewProjectPage />
             </Route>
+            <Route exact path="/portfolio">
+              <PortfolioPage />
+            </Route>
             <Route exact path="/experience">
               <ExperiencesPage />
             </Route>
@@ -42,6 +47,9 @@ export default function App() {
             </Route>
             <Route exact path="/contact">
               <ContactPage />
+            </Route>
+            <Route exact path="/confirmation">
+              <ConfirmationPage />
             </Route>
           </Switch>
       </Router>

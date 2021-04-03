@@ -11,7 +11,7 @@ import { ArrowRightAlt } from '@material-ui/icons';
  */
 
 
-export default function App() {
+export default function IntroductionBiography() {
 
   return (
 
@@ -22,6 +22,7 @@ export default function App() {
             <Typography variant="overline">Who am I?</Typography>
             <br/><br/>
             <Typography variant="h3" component="h2">I want to make things that make a difference</Typography>
+            {/* Biography section */}
             <Box mt={4}>
               <Typography variant="subtitle1" color="textSecondary" paragraph={true} style={{textAlign: "justify"}}>
                 Hello, thanks for visiting my portfolio. My name is Holland Aucoin and I am currently a student at Grand Canyon University 
@@ -31,6 +32,7 @@ export default function App() {
                 practicing servant leadership, with a strong desire to use my abilities to improve the lives of others.
               </Typography>
             </Box>
+            {/* Button to go to the about page */}
             <Box mt={4}>
               <Button href="/about" color="primary" endIcon={<ArrowRightAlt />}>Get to know me</Button>
             </Box>

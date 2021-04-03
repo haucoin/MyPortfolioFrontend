@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Grid, Drawer, List, ListItem, ListItemIcon, ListItemText, IconButton, Divider } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { ExpandLess, MenuRounded } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 import theme from '../theme/theme';
 
 /**
@@ -15,7 +15,7 @@ import theme from '../theme/theme';
  * @Summary This component displays the navbar that is present on every page to handle navigation
  */
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         paddingTop: '10px',
         paddingBottom: '10px',
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-export default function App() {
+export default function Navbar() {
 
     const classes = useStyles();
 
@@ -189,7 +189,7 @@ export default function App() {
                         : null }
 
                         <Grid container  direction="row" justify="space-evenly" alignItems="center">
-                        <Link to="/projects" style={{ textDecoration: 'none' }}>
+                            <Link to="/projects" style={{ textDecoration: 'none' }}>
                                 <Button style={{fontSize: "16px"}}>PROJECTS</Button>
                             </Link>
                             <Link to="/experience" style={{ textDecoration: 'none' }}>

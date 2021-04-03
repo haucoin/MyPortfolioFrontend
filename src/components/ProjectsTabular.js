@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { AppBar, Tabs, Tab, Typography, Box, Container, Grid, Card, CardActionArea, CardMedia, CardHeader } from '@material-ui/core';
-import service from '../services/ProjectService';
-import theme from '../theme/theme';
-import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-
+import { AppBar, Tabs, Tab, Typography, Box, Container, Grid, Card, CardActionArea, CardMedia, CardHeader } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
+import { makeStyles } from '@material-ui/core/styles';
+import theme from '../theme/theme';
+import service from '../services/ProjectService';
 
 /**
  * MyPortfolio
@@ -62,15 +61,19 @@ function a11yProps(index) {
 }
 
 
-export default function App() {
+export default function ProjectsTabular() {
 
     const classes = useStyles();
+
+    // Define value variable as state
     const [value, setValue] = React.useState(0);
 
+    // Method to handle the change of the tabular display
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    // Method to handle the change of the index the tabular display
     const handleChangeIndex = (index) => {
         setValue(index);
     };
@@ -90,10 +93,8 @@ export default function App() {
         let projectsByLanguage = [];
 
         projects.map((project, index) => (
-            
             project.languages.includes(language) ? projectsByLanguage[index] = project : null
         ))
-
         return projectsByLanguage;
     }
 
@@ -107,14 +108,17 @@ export default function App() {
 
         <section>
             <Box pt={8} pb={6}>
+                {/* Title and introduction section */}
                 <Container maxWidth="md">
                     <Box textAlign="left" mb={5}>
                         <Typography variant="h4" component="h2" gutterBottom={true}>See my work.</Typography>
                         <Typography variant="subtitle1" color="textSecondary">
-                            Below is a display of the projects that I have completed during my time at Grand Canyon University, and each contain a detailed description when selected.
+                            Below is a display of the projects that I have completed during my time at Grand Canyon University, and each contain 
+                            a detailed description with an introduction, design information, and the final product when selected.
                         </Typography>
                     </Box>
                 </Container>
+                {/* Tabular component */}
                 <Container maxWidth="md">
                     <AppBar position="static" color="default">
                         <Tabs
@@ -132,20 +136,18 @@ export default function App() {
                             <Tab label="JS" {...a11yProps(4)} className={classes.tabs} />
                         </Tabs>
                     </AppBar>
-                    <SwipeableViews
-                        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                        index={value}
-                        onChangeIndex={handleChangeIndex}
-                    >
+                    <SwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={value} onChangeIndex={handleChangeIndex}>
+                        {/* Tab for all projects */}
                         <TabPanel value={value} index={0} dir={theme.direction}>
                             <Box textAlign="center">
                                 <Grid container spacing={3}>
-
+                                    {/* Iterate through all projects */}
                                     {projects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
+                                            {/* Check if it is the portfolio project, if so send to portfolio page */}
                                             {project._id === "6042f5de5167ce01f41df519" ? 
-                                                <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                <Link to='/portfolio' style={{ textDecoration: 'none', color: 'black' }}>
                                                     <CardActionArea>
                                                         <CardMedia component="img" image={project.coverImage} />
                                                         <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
@@ -163,19 +165,20 @@ export default function App() {
                                         </Grid>
                                     ))
                                     }
-
                                 </Grid>
                             </Box>
                         </TabPanel>
+                        {/* Tab for Java projects */}
                         <TabPanel value={value} index={1} dir={theme.direction}>
                             <Box textAlign="center">
                                 <Grid container spacing={3}>
-
+                                    {/* Iterate through all Java projects */}
                                     {javaProjects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
+                                                {/* Check if it is the portfolio project, if so send to portfolio page */}
                                                 {project._id === "6042f5de5167ce01f41df519" ? 
-                                                    <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <Link to='/portfolio' style={{ textDecoration: 'none', color: 'black' }}>
                                                         <CardActionArea>
                                                             <CardMedia component="img" image={project.coverImage} />
                                                             <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
@@ -193,14 +196,14 @@ export default function App() {
                                         </Grid>
                                     ))
                                     }
-
                                 </Grid>
                             </Box>
                         </TabPanel>
+                        {/* Tab for C# projects */}
                         <TabPanel value={value} index={2} dir={theme.direction}>
                             <Box textAlign="center">
                                 <Grid container spacing={3}>
-
+                                    {/* Iterate through all C# projects */}
                                     {cProjects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
@@ -214,14 +217,14 @@ export default function App() {
                                         </Grid>
                                     ))
                                     }
-
                                 </Grid>
                             </Box>
                         </TabPanel>
+                        {/* Tab for PHP projects */}
                         <TabPanel value={value} index={3} dir={theme.direction}>
                             <Box textAlign="center">
                                 <Grid container spacing={3}>
-
+                                    {/* Iterate through all PHP projects */}
                                     {phpProjects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
@@ -235,19 +238,20 @@ export default function App() {
                                         </Grid>
                                     ))
                                     }
-
                                 </Grid>
                             </Box>
                         </TabPanel>
+                        {/* Tab for Javascript projects */}
                         <TabPanel value={value} index={4} dir={theme.direction}>
                             <Box textAlign="center">
                                 <Grid container spacing={3}>
-
+                                    {/* Iterate through all Javascript projects */}
                                     {javascriptProjects.map((project, id) => (
                                         <Grid item xs={12} sm={6} md={4} key={id}>
                                             <Card>
+                                                {/* Check if it is the portfolio project, if so send to portfolio page */}
                                                 {project._id === "6042f5de5167ce01f41df519" ? 
-                                                    <Link to={{ pathname: '/portfolio', state: { projectId: project._id } }} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <Link to='/portfolio' style={{ textDecoration: 'none', color: 'black' }}>
                                                         <CardActionArea>
                                                             <CardMedia component="img" image={project.coverImage} />
                                                             <CardHeader style={{height: 40}} subheader={project.name} titleTypographyProps={{ gutterBottom: false }} />
@@ -265,7 +269,6 @@ export default function App() {
                                         </Grid>
                                     ))
                                     }
-
                                 </Grid>
                             </Box>
                         </TabPanel>
@@ -273,6 +276,5 @@ export default function App() {
                 </Container>
             </Box>
         </section>
-
     )
 }

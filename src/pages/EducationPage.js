@@ -16,7 +16,6 @@ export default function EducationPage() {
   
   return (
     <React.Fragment>
-      
       <Navbar />
       <EducationInformation />
       <EducationSkills />

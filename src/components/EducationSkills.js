@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Container, Box, Typography, Grid, Paper } from '@material-ui/core';
-import service from '../services/SkillService';
-import { makeStyles } from '@material-ui/core/styles';
 import { Code, Laptop, Build, Timeline, Web, ViewColumn, Dns, Cloud, Storage, Layers } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 import theme from '../theme/theme';
+import service from '../services/SkillService';
 
 /**
  * MyPortfolio
@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function App() {
+export default function EducationSkills() {
 
   // Creating variables of skill lists to be filled be appropriate service call
   const [languageSkills, setLanguages] = React.useState([]);

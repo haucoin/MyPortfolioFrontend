@@ -14,7 +14,6 @@ export default function ExperiencesPage() {
   
   return (
     <React.Fragment>
-      
       <Navbar />
         <Experiences />
       <Footer />

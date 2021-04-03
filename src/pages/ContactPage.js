@@ -14,7 +14,6 @@ export default function ContactPage() {
   
   return (
     <React.Fragment>
-      
       <Navbar />
       <Form />
       <Footer />
