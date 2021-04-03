@@ -13,8 +13,8 @@ class MailGunService {
      */
     async sendEmail(emailInfo) {
 
-        var api_key = '0deded9b9d811f7358a8f55b9723bf30-0d2e38f7-de303e2e';
-        var domain = 'mail.hollandaucoin.com';
+        var api_key = '31f236fbafa3fc9b95104db114ca5bcd-b6d086a8-acc98cad';
+        var domain = 'mg.hollandaucoin.com';
         var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
         let sender = "*** " + emailInfo.firstName + " " + emailInfo.lastName + " <" + emailInfo.email + ">";
