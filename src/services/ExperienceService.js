@@ -22,7 +22,7 @@ class ExperienceService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/experiences/all/" + company, axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/experiences/all/" + company, axiosConfig);
         return response;
     }
 
@@ -40,7 +40,7 @@ class ExperienceService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/experiences/" + id, axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/experiences/" + id, axiosConfig);
         return response;
     }
 

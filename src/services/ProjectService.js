@@ -21,7 +21,7 @@ class ProjectService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/projects/all", axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/projects/all", axiosConfig);
         return response;
     }
 
@@ -39,7 +39,7 @@ class ProjectService {
             }
         };
 
-         const response = await axios.get("http://localhost:8102/projects/" + id, axiosConfig);
+         const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/projects/" + id, axiosConfig);
         return response;
     }
 

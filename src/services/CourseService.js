@@ -21,7 +21,7 @@ class CourseService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/courses/all", axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/courses/all", axiosConfig);
         return response;
     }
 

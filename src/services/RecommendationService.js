@@ -21,7 +21,7 @@ class RecommendationService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/recommendations/all", axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/recommendations/all", axiosConfig);
         return response;
     }
 

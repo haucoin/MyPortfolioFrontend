@@ -22,7 +22,7 @@ class SkillService {
             }
         };
 
-        const response = await axios.get("http://localhost:8102/skills/all/" + type, axiosConfig);
+        const response = await axios.get("http://ec2-13-56-210-118.us-west-1.compute.amazonaws.com/skills/all/" + type, axiosConfig);
         return response;
     }
 
