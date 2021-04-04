@@ -13,15 +13,15 @@ class MailGunService {
      */
     async sendEmail(emailInfo) {
 
-        var api_key = '31f236fbafa3fc9b95104db114ca5bcd-b6d086a8-acc98cad';
-        var domain = 'mg.hollandaucoin.com';
+        var api_key = '[MY_KEY]';
+        var domain = '[MY_DOMAIN]';
         var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
         let sender = "*** " + emailInfo.firstName + " " + emailInfo.lastName + " <" + emailInfo.email + ">";
          
         var data = {
           from: sender,
-          to: 'holland.aucoin2@gmail.com',
+          to: '[EMAIL]',
           subject: emailInfo.subject,
           text: emailInfo.message
         };
